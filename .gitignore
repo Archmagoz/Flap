@@ -1,0 +1,16 @@
+android/
+.vscode/
+.vs/
+.rc/
+.godot/
+.import/
+.mono/
+data_*/
+.nomedia
+export.cfg
+export_credentials.cfg
+*.translation
+mono_crash.*.json
+*.import
+*.uid
+*.tmp

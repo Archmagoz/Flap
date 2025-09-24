@@ -1,0 +1,54 @@
+[gd_scene load_steps=7 format=3 uid="uid://b00nfge050lwt"]
+
+[ext_resource type="PackedScene" uid="uid://p7s5sc0qenhv" path="res://Player/Player.tscn" id="1_a526m"]
+[ext_resource type="Texture2D" uid="uid://dav5xww3qjwog" path="res://Level/Sprites/background-day.png" id="1_cyxyq"]
+[ext_resource type="Script" uid="uid://beadcglynn8gd" path="res://Level/Level.gd" id="1_i5eh5"]
+[ext_resource type="PackedScene" uid="uid://co1c2hrv3a8u4" path="res://Level/Pipe/Pipe.tscn" id="2_r3cbp"]
+[ext_resource type="Script" uid="uid://b6qr06ih8drmu" path="res://SoundComponent/SoundComponent.gd" id="5_5noo7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i5eh5"]
+size = Vector2(766, 20)
+
+[node name="Level" type="Node2D"]
+script = ExtResource("1_i5eh5")
+metadata/_edit_horizontal_guides_ = [-55.0, 55.0]
+
+[node name="ParallaxBackground" type="Parallax2D" parent="."]
+repeat_size = Vector2(288, 0)
+autoscroll = Vector2(-125, 0)
+repeat_times = 10
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground"]
+texture = ExtResource("1_cyxyq")
+
+[node name="Player" parent="." instance=ExtResource("1_a526m")]
+
+[node name="PipeTop" parent="." instance=ExtResource("2_r3cbp")]
+position = Vector2(414, -55)
+rotation = 3.1415925
+
+[node name="PipeBot" parent="." instance=ExtResource("2_r3cbp")]
+position = Vector2(414, 55)
+
+[node name="Camera" type="Camera2D" parent="."]
+zoom = Vector2(1.5, 1.5)
+
+[node name="Hitbox" type="StaticBody2D" parent="."]
+
+[node name="Heaven" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(-2, -223)
+shape = SubResource("RectangleShape2D_i5eh5")
+
+[node name="Floor" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(-2, 224)
+shape = SubResource("RectangleShape2D_i5eh5")
+
+[node name="SoundComponent" type="AudioStreamPlayer2D" parent="."]
+script = ExtResource("5_5noo7")
+metadata/_custom_type_script = "uid://b6qr06ih8drmu"
+
+[node name="PipeSpawnner" type="Timer" parent="."]
+wait_time = 3.4
+autostart = true
+
+[connection signal="timeout" from="PipeSpawnner" to="." method="_on_pipe_spawnner_timeout"]

@@ -1,0 +1,29 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Flap"
+run/main_scene="uid://b00nfge050lwt"
+config/features=PackedStringArray("4.5", "Mobile")
+run/max_fps=120
+config/icon="uid://bk37ku45c1cms"
+
+[debug]
+
+gdscript/warnings/untyped_declaration=1
+
+[display]
+
+window/size/resizable=false
+
+[rendering]
+
+renderer/rendering_method="mobile"
