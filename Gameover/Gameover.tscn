@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://baslgvna04i5r"]
+
+[ext_resource type="Texture2D" uid="uid://bo2f6va43qtw4" path="res://Gameover/gameover.png" id="1_mdolk"]
+
+[node name="Gameover" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_mdolk")

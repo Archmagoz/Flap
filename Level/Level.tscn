@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dav5xww3qjwog" path="res://Level/Sprites/background-day.png" id="1_cyxyq"]
 [ext_resource type="Script" uid="uid://beadcglynn8gd" path="res://Level/Level.gd" id="1_i5eh5"]
 [ext_resource type="PackedScene" uid="uid://co1c2hrv3a8u4" path="res://Level/Pipe/Pipe.tscn" id="2_r3cbp"]
-[ext_resource type="Script" uid="uid://b6qr06ih8drmu" path="res://SoundComponent/SoundComponent.gd" id="5_5noo7"]
+[ext_resource type="PackedScene" uid="uid://ddkxceiixy1l5" path="res://Level/Score/Score.tscn" id="5_5noo7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i5eh5"]
 size = Vector2(766, 20)
@@ -16,9 +16,10 @@ metadata/_edit_horizontal_guides_ = [-55.0, 55.0]
 [node name="ParallaxBackground" type="Parallax2D" parent="."]
 repeat_size = Vector2(288, 0)
 autoscroll = Vector2(-125, 0)
-repeat_times = 10
+repeat_times = 5
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground"]
+position = Vector2(240, 0)
 texture = ExtResource("1_cyxyq")
 
 [node name="Player" parent="." instance=ExtResource("1_a526m")]
@@ -43,12 +44,12 @@ shape = SubResource("RectangleShape2D_i5eh5")
 position = Vector2(-2, 224)
 shape = SubResource("RectangleShape2D_i5eh5")
 
-[node name="SoundComponent" type="AudioStreamPlayer2D" parent="."]
-script = ExtResource("5_5noo7")
-metadata/_custom_type_script = "uid://b6qr06ih8drmu"
-
 [node name="PipeSpawnner" type="Timer" parent="."]
 wait_time = 3.4
 autostart = true
+
+[node name="Score" parent="." instance=ExtResource("5_5noo7")]
+z_index = 20
+position = Vector2(341, -194)
 
 [connection signal="timeout" from="PipeSpawnner" to="." method="_on_pipe_spawnner_timeout"]

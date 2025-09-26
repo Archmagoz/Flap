@@ -3,7 +3,6 @@ extends Node2D
 const PIPE_SCENE: PackedScene = preload("res://Level/Pipe/Pipe.tscn")
 
 @onready var camera: Camera2D = $Camera
-@onready var sound: SoundComponent = $SoundComponent
 
 var screen_size: Vector2
 var cam_pos: Vector2

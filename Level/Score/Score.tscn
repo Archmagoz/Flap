@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://ddkxceiixy1l5"]
+
+[ext_resource type="Texture2D" uid="uid://boamtqvifv4om" path="res://Level/Score/0.png" id="1_qia16"]
+
+[node name="Score" type="Node2D"]
+
+[node name="III" type="Sprite2D" parent="."]
+position = Vector2(-26, 0)
+texture = ExtResource("1_qia16")
+
+[node name="II" type="Sprite2D" parent="."]
+position = Vector2(1, 0)
+texture = ExtResource("1_qia16")
+
+[node name="I" type="Sprite2D" parent="."]
+position = Vector2(28, 0)
+texture = ExtResource("1_qia16")

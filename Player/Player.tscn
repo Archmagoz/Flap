@@ -1,10 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://p7s5sc0qenhv"]
+[gd_scene load_steps=7 format=3 uid="uid://p7s5sc0qenhv"]
 
 [ext_resource type="Script" uid="uid://c7korlvvm0ko3" path="res://Player/Player.gd" id="1_ddoul"]
 [ext_resource type="Texture2D" uid="uid://c3ndykaub6iis" path="res://Player/Sprites/bluebird-downflap.png" id="1_tok1r"]
 [ext_resource type="Texture2D" uid="uid://5f6kwo44l0b4" path="res://Player/Sprites/bluebird-midflap.png" id="2_ddoul"]
 [ext_resource type="Texture2D" uid="uid://c8cej0onbcw2b" path="res://Player/Sprites/bluebird-upflap.png" id="3_8g4oa"]
-[ext_resource type="PackedScene" uid="uid://cac0pdjslfb1s" path="res://SoundComponent/SoundComponent.tscn" id="5_8g4oa"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6ysni"]
 animations = [{
@@ -36,5 +35,3 @@ animation = &"fly"
 
 [node name="Hitbox" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_tok1r")
-
-[node name="SoundComponent" parent="." instance=ExtResource("5_8g4oa")]

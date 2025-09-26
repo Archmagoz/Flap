@@ -1,4 +1,4 @@
-class_name SoundComponent extends AudioStreamPlayer2D
+extends AudioStreamPlayer2D
 
 const FLAP_SONG: Resource = preload("res://Player/Sounds/wing.ogg")
 const HIT_SONG: Resource = preload("res://Player/Sounds/hit.ogg")

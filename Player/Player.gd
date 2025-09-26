@@ -3,7 +3,6 @@ extends CharacterBody2D
 const JUMP_VELOCITY: float = -300.0
 
 @onready var anim: AnimatedSprite2D = $AnimatedSprite
-@onready var sound: SoundComponent = $SoundComponent
 
 var is_alive: bool = true
 var angle: float = 0.5
@@ -20,7 +19,7 @@ func _physics_process(_delta: float) -> void:
 		rotation = lerp(rotation, 0.5, 3 * _delta)
 
 	if Input.is_action_just_pressed("ui_accept") and is_alive:
-		sound.flap()
+		Sound.flap()
 		velocity.y = JUMP_VELOCITY
 		rotation = -0.5
 
@@ -28,5 +27,5 @@ func _physics_process(_delta: float) -> void:
 
 func die() -> void:
 	is_alive = false
-	sound.hit()
 	anim.stop()
+	Game.gameover()

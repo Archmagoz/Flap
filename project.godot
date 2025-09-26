@@ -16,6 +16,11 @@ config/features=PackedStringArray("4.5", "Mobile")
 run/max_fps=120
 config/icon="uid://bk37ku45c1cms"
 
+[autoload]
+
+Sound="*res://Scripts/Sound.gd"
+Game="*res://Scripts/Game.gd"
+
 [debug]
 
 gdscript/warnings/untyped_declaration=1
