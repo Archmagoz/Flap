@@ -1,17 +1,19 @@
-[gd_scene load_steps=2 format=3 uid="uid://ddkxceiixy1l5"]
+[gd_scene load_steps=3 format=3 uid="uid://ddkxceiixy1l5"]
 
+[ext_resource type="Script" uid="uid://cvi74gevvl7lr" path="res://Level/Score/Score.gd" id="1_npq0u"]
 [ext_resource type="Texture2D" uid="uid://boamtqvifv4om" path="res://Level/Score/0.png" id="1_qia16"]
 
 [node name="Score" type="Node2D"]
+script = ExtResource("1_npq0u")
 
-[node name="III" type="Sprite2D" parent="."]
+[node name="HundredSprite" type="Sprite2D" parent="."]
 position = Vector2(-26, 0)
 texture = ExtResource("1_qia16")
 
-[node name="II" type="Sprite2D" parent="."]
+[node name="TenSprite" type="Sprite2D" parent="."]
 position = Vector2(1, 0)
 texture = ExtResource("1_qia16")
 
-[node name="I" type="Sprite2D" parent="."]
+[node name="UnitSprite" type="Sprite2D" parent="."]
 position = Vector2(28, 0)
 texture = ExtResource("1_qia16")

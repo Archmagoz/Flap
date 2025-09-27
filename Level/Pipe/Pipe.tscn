@@ -21,6 +21,7 @@ texture = ExtResource("1_w1a6c")
 [node name="Hitbox" type="CollisionShape2D" parent="."]
 position = Vector2(0, 160.5)
 shape = SubResource("RectangleShape2D_w1a6c")
+debug_color = Color(0.945934, 4.7168137e-06, 0.5924526, 0.41960785)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="Lifetime" to="." method="_on_lifetime_timeout"]

@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 const JUMP_VELOCITY: float = -300.0
 
-@onready var anim: AnimatedSprite2D = $AnimatedSprite
+@onready var anim := $AnimatedSprite
 
 var is_alive: bool = true
 var angle: float = 0.5
