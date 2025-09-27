@@ -2,14 +2,17 @@ extends CharacterBody2D
 
 const JUMP_VELOCITY: float = -300.0
 
-@onready var anim := $AnimatedSprite
+@onready var anim: AnimatedSprite2D = $AnimatedSprite
 
+# Logic variables
 var is_alive: bool = true
 var angle: float = 0.5
 
+# Player init/start animation
 func _ready() -> void:
 	anim.play("fly")
 
+# Player logic
 func _physics_process(_delta: float) -> void:
 	velocity += get_gravity() * _delta
 
@@ -25,6 +28,7 @@ func _physics_process(_delta: float) -> void:
 
 	move_and_slide()
 
+# This is dark souls
 func die() -> void:
 	is_alive = false
 	anim.stop()

@@ -13,8 +13,9 @@ script = ExtResource("1_i5eh5")
 metadata/_edit_horizontal_guides_ = [-55.0, 55.0]
 
 [node name="ParallaxBackground" type="Parallax2D" parent="."]
+scroll_offset = Vector2(288, 0)
 repeat_size = Vector2(288, 0)
-autoscroll = Vector2(-125, 0)
+autoscroll = Vector2(-150, 0)
 repeat_times = 5
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground"]

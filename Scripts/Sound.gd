@@ -1,11 +1,11 @@
 extends Node2D
 
-const FLAP_SONG := preload("res://Player/Sounds/wing.ogg")
-const HIT_SONG := preload("res://Player/Sounds/hit.ogg")
-const POINT_SOUND := preload("res://Level/Sounds/point.ogg")
+const FLAP_SONG: Resource = preload("res://Player/Sounds/wing.ogg")
+const HIT_SONG: Resource = preload("res://Player/Sounds/hit.ogg")
+const POINT_SOUND: Resource = preload("res://Level/Sounds/point.ogg")
 
 func play_sound(sound: AudioStream) -> void:
-	var temp_player := AudioStreamPlayer2D.new()
+	var temp_player: AudioStreamPlayer2D = AudioStreamPlayer2D.new()
 	temp_player.stream = sound
 	add_child(temp_player)
 	
