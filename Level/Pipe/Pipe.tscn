@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://ctxea8wshhl10" path="res://Level/Pipe/Sprites/pipe-green.png" id="1_w1a6c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w1a6c"]
-size = Vector2(50, 319)
+size = Vector2(49, 503.5)
 
 [node name="Pipe" type="Area2D"]
 script = ExtResource("1_63stp")
@@ -18,8 +18,15 @@ autostart = true
 position = Vector2(0, 160)
 texture = ExtResource("1_w1a6c")
 
+[node name="Sprite2" type="Sprite2D" parent="."]
+position = Vector2(0, 347)
+rotation = -3.1415927
+texture = ExtResource("1_w1a6c")
+flip_h = true
+
 [node name="Hitbox" type="CollisionShape2D" parent="."]
-position = Vector2(0, 160.5)
+visible = false
+position = Vector2(0, 253.25)
 shape = SubResource("RectangleShape2D_w1a6c")
 debug_color = Color(0.945934, 4.7168137e-06, 0.5924526, 0.41960785)
 
