@@ -1,8 +1,27 @@
-[gd_scene load_steps=2 format=3 uid="uid://baslgvna04i5r"]
+[gd_scene load_steps=5 format=3 uid="uid://baslgvna04i5r"]
 
 [ext_resource type="Texture2D" uid="uid://bo2f6va43qtw4" path="res://Gameover/gameover.png" id="1_mdolk"]
+[ext_resource type="Script" uid="uid://bempjatkyuh0k" path="res://Gameover/Gameover.gd" id="1_yu00y"]
+[ext_resource type="Texture2D" uid="uid://bwttr3n5hgw1k" path="res://Gameover/retry_btn.png" id="2_7yh4w"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yu00y"]
 
 [node name="Gameover" type="Node2D"]
+script = ExtResource("1_yu00y")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1, -57)
 texture = ExtResource("1_mdolk")
+
+[node name="RetryBtn" type="Button" parent="."]
+offset_left = -129.0
+offset_top = 33.0
+offset_right = 391.0
+offset_bottom = 206.0
+scale = Vector2(0.5, 0.5)
+mouse_default_cursor_shape = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_yu00y")
+icon = ExtResource("2_7yh4w")
+flat = true
+
+[connection signal="pressed" from="RetryBtn" to="." method="_on_retry_btn_pressed"]
