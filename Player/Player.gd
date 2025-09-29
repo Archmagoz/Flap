@@ -16,12 +16,9 @@ func _ready() -> void:
 func _physics_process(_delta: float) -> void:
 	velocity += get_gravity() * _delta
 
-	if velocity.y > 0:
-		rotation += angle * _delta
-	else:
-		rotation = lerp(rotation, 0.5, 3 * _delta)
+	rotation = lerp(rotation, 0.5, 3 * _delta)
 
-	if Input.is_action_just_pressed("ui_accept") and is_alive:
+	if is_alive and Input.is_action_just_pressed("ui_accept"):
 		Sound.flap()
 		velocity.y = JUMP_VELOCITY
 		rotation = -0.5
