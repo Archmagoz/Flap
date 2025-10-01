@@ -15,14 +15,9 @@ func _ready() -> void:
 # Player logic
 func _physics_process(_delta: float) -> void:
 	velocity += get_gravity() * _delta
-
 	rotation = lerp(rotation, 0.5, 3 * _delta)
 
-	if is_alive and Input.is_action_just_pressed("ui_accept"):
-		Sound.flap()
-		velocity.y = JUMP_VELOCITY
-		rotation = -0.5
-
+	_handle_jump()
 	move_and_slide()
 
 # This is dark souls
@@ -30,3 +25,11 @@ func die() -> void:
 	is_alive = false
 	anim.stop()
 	Game.gameover()
+
+# Pula boi pula cavalo
+func _handle_jump() -> void:
+	if is_alive:
+		if Input.is_action_just_pressed("jump"):
+			Sound.flap()
+			velocity.y = JUMP_VELOCITY
+			rotation = -0.5
