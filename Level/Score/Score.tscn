@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://boamtqvifv4om" path="res://Level/Score/0.png" id="1_qia16"]
 
 [node name="Score" type="Node2D"]
+texture_filter = 1
 script = ExtResource("1_npq0u")
 
 [node name="HundredSprite" type="Sprite2D" parent="."]

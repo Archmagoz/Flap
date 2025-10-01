@@ -30,6 +30,7 @@ height = 22.0
 script = ExtResource("1_ddoul")
 
 [node name="AnimatedSprite" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_6ysni")
 animation = &"fly"
 
