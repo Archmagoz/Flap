@@ -21,6 +21,3 @@ func inc_score() -> void:
 
 func reset_score() -> void:
 	score = 0
-
-func get_score() -> int:
-	return score

@@ -1,11 +1,11 @@
 extends Node2D
 
-# Preload packed scenes and main components
-const PIPE_SCENE: PackedScene = preload("res://Level/Pipe/Pipe.tscn")
-
 @onready var camera: Camera2D = $Camera
 @onready var score: Node2D = $Score
 @onready var pipe_spawnner: Timer = $PipeSpawnner
+
+# Preload packed scenes and main components
+const PIPE_SCENE: PackedScene = preload("res://Level/Pipe/Pipe.tscn")
 
 # Level logic variables
 var screen_size: Vector2

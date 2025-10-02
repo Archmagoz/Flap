@@ -1,8 +1,9 @@
 extends CharacterBody2D
 
-const JUMP_VELOCITY: float = -300.0
-
 @onready var anim: AnimatedSprite2D = $AnimatedSprite
+
+const JUMP_VELOCITY: float = -300.0
+const OWO: int = 3
 
 # Logic variables
 var is_alive: bool = true
@@ -15,7 +16,7 @@ func _ready() -> void:
 # Player logic
 func _physics_process(_delta: float) -> void:
 	velocity += get_gravity() * _delta
-	rotation = lerp(rotation, 0.5, 3 * _delta)
+	rotation = lerp(rotation, angle, OWO * _delta)
 
 	_handle_jump()
 	move_and_slide()
@@ -32,4 +33,4 @@ func _handle_jump() -> void:
 		if Input.is_action_just_pressed("jump"):
 			Sound.flap()
 			velocity.y = JUMP_VELOCITY
-			rotation = -0.5
+			rotation += -0.75

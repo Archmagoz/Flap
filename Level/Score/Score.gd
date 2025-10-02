@@ -14,8 +14,8 @@ func _ready() -> void:
 		
 	update_score_display()
 
-# Change the score image when needed
+# Change the score image when needed @warning_ignore("integer_division") bua bua
 func update_score_display() -> void:
-	unit_sprite.texture = sprites[Game.score % 10]
-	ten_sprite.texture = sprites[(Game.score / 10) % 10]
-	hundred_sprite.texture = sprites[(Game.score / 100) % 10]
+	@warning_ignore("integer_division") unit_sprite.texture = sprites[Game.score % 10]
+	@warning_ignore("integer_division") ten_sprite.texture = sprites[Game.score / 10 % 10]
+	@warning_ignore("integer_division") hundred_sprite.texture = sprites[Game.score / 100 % 10]
