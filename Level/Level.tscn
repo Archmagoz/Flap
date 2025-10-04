@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://p7s5sc0qenhv" path="res://Player/Player.tscn" id="1_a526m"]
 [ext_resource type="Texture2D" uid="uid://dav5xww3qjwog" path="res://Level/Sprites/background-day.png" id="1_cyxyq"]
-[ext_resource type="Script" uid="uid://beadcglynn8gd" path="res://Level/Level.gd" id="1_i5eh5"]
+[ext_resource type="Script" uid="uid://dvdhmhb5xwyoh" path="res://Level/Level.gd" id="1_i5eh5"]
 [ext_resource type="PackedScene" uid="uid://ddkxceiixy1l5" path="res://Level/Score/Score.tscn" id="5_5noo7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i5eh5"]
@@ -24,6 +24,7 @@ position = Vector2(240, 0)
 texture = ExtResource("1_cyxyq")
 
 [node name="Player" parent="." instance=ExtResource("1_a526m")]
+motion_mode = 1
 
 [node name="Camera" type="Camera2D" parent="."]
 zoom = Vector2(1.5, 1.5)

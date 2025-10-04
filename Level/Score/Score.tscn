@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://ddkxceiixy1l5"]
 
-[ext_resource type="Script" uid="uid://cvi74gevvl7lr" path="res://Level/Score/Score.gd" id="1_npq0u"]
-[ext_resource type="Texture2D" uid="uid://boamtqvifv4om" path="res://Level/Score/0.png" id="1_qia16"]
+[ext_resource type="Script" uid="uid://dael4vnnqcpnp" path="res://Level/Score/Score.gd" id="1_npq0u"]
+[ext_resource type="Texture2D" uid="uid://bbfjm7yosf0qh" path="res://Level/Score/0.png" id="1_qia16"]
 
 [node name="Score" type="Node2D"]
 texture_filter = 1
