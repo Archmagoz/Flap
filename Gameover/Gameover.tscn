@@ -15,6 +15,7 @@ unicode = 32
 events = [SubResource("InputEventKey_yu00y")]
 
 [node name="Gameover" type="Node2D"]
+z_index = 999
 texture_filter = 1
 script = ExtResource("1_yu00y")
 

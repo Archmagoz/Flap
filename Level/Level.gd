@@ -5,7 +5,8 @@ extends Node2D
 @onready var pipe_spawnner: Timer = $PipeSpawnner
 
 # Preload packed scenes and main components
-const PIPE_SCENE: PackedScene = preload("res://Level/Pipe/Pipe.tscn")
+const PIPE_SCENE_GREEN: PackedScene = preload("res://Level/Pipe/GreenPipe/GreenPipe.tscn")
+const PIPE_SCENE_RED: PackedScene = preload("res://Level/Pipe/RedPipe/RedPipe.tscn")
 
 # Level logic variables
 var screen_size: Vector2
@@ -22,8 +23,10 @@ func _ready() -> void:
 
 # Spawn random pipes with std gap
 func _on_pipe_spawnner_timeout() -> void:
-	var pipe_down: Object = PIPE_SCENE.instantiate()
-	var pipe_up: Object = PIPE_SCENE.instantiate()
+	var rand: int = Game.rng.randi_range(1, 10)
+	
+	var pipe_down: Object
+	var pipe_up: Object
 	
 	var min_y: float = cam_pos.y - screen_size.y / 2
 	var max_y: float = cam_pos.y + screen_size.y / 2
@@ -31,6 +34,13 @@ func _on_pipe_spawnner_timeout() -> void:
 	var random_y: float = randf_range(min_y + gap, max_y - gap)
 	var spawn_x: float = cam_pos.x + screen_size.x / 2 + 50.0
 	
+	if(rand <= 7):
+		pipe_down = PIPE_SCENE_GREEN.instantiate()
+		pipe_up = PIPE_SCENE_GREEN.instantiate()
+	else:
+		pipe_down = PIPE_SCENE_RED.instantiate()
+		pipe_up = PIPE_SCENE_RED.instantiate()
+		
 	pipe_down.position = Vector2(spawn_x, random_y)
 	pipe_up.position = Vector2(spawn_x, random_y - gap)
 	pipe_up.rotation_degrees = 180

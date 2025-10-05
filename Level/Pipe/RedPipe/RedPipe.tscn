@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://cg0556chbchhw"]
+
+[ext_resource type="Script" uid="uid://cf1iia56pwuos" path="res://Level/Pipe/RedPipe/RedPipe.gd" id="1_km5mi"]
+[ext_resource type="Texture2D" uid="uid://w6v6kkig1ltl" path="res://Level/Pipe/RedPipe/Sprite/pipe-red.png" id="1_t4t5d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t4t5d"]
+size = Vector2(49, 503.5)
+
+[node name="RedPipe" type="Area2D"]
+script = ExtResource("1_km5mi")
+
+[node name="Lifetime" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+autostart = true
+
+[node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(0, 160)
+texture = ExtResource("1_t4t5d")
+
+[node name="Sprite2" type="Sprite2D" parent="."]
+position = Vector2(0, 347)
+rotation = 3.1415925
+texture = ExtResource("1_t4t5d")
+flip_h = true
+
+[node name="Hitbox" type="CollisionShape2D" parent="."]
+position = Vector2(0, 253.25)
+shape = SubResource("RectangleShape2D_t4t5d")
+debug_color = Color(0.945934, 4.7168137e-06, 0.5924526, 0.41960785)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Lifetime" to="." method="_on_lifetime_timeout"]

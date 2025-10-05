@@ -4,6 +4,9 @@ extends Node
 const LEVEL: PackedScene = preload("res://Level/Level.tscn")
 const GAMEOVER: PackedScene = preload("res://Gameover/Gameover.tscn")
 
+# Instanciate some utils
+var rng: Object = RandomNumberGenerator.new()
+
 # Game manager
 func game_start() -> void:
 	reset_score()
