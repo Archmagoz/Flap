@@ -64,8 +64,7 @@ func add_score() -> Area2D:
 	
 	score_area.body_exited.connect(func (_body: CharacterBody2D) -> void:
 		Sound.point()
-		Game.inc_score()
-		score.update_score_display()
+		score.inc_score()
 		score_area.queue_free()
 	) 
 	
